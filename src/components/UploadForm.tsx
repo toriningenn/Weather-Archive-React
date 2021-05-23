@@ -17,7 +17,6 @@ const UploadForm = (props: {}) => {
                 formData.append(`files${i}`, files[i], files[i].name);
             }
             await axios.post("http://localhost:8080/upload", formData)
-                .then((responce) => console.log(responce));
         }
     }
 

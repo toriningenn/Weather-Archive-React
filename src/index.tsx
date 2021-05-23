@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import UploadForm from "./components/UploadForm";
-import Navigation from "./components/Navigation";
+import WeatherTable from "./components/WeatherTable";
 
 ReactDOM.render(
   <React.StrictMode>
+    <WeatherTable/>
     <UploadForm/>
-    <Navigation/>
   </React.StrictMode>,
   document.getElementById('root')
 );
