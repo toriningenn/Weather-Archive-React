@@ -5,9 +5,7 @@ export const sendFiles = () => {
 }
 
 export function getData(page: number) {
-   let data;
-      axios.get(`http://localhost:8080/${page}`)
-          .then((response ) => data = response);
-      return data as unknown as Array<Weather>;
+   return axios.get(`http://localhost:8080/${page}`)
+       .then((response)=> response.data as unknown as Iterable<Weather>)
 }
 

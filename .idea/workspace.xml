@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6290e63-56a3-4b56-8c74-c24dfe96d92a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UploadForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WeatherApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +88,8 @@
       <workItem from="1621502384059" duration="15905000" />
       <workItem from="1621583453345" duration="15652000" />
       <workItem from="1621742767137" duration="1214000" />
-      <workItem from="1621758977947" duration="11132000" />
+      <workItem from="1621758977947" duration="12856000" />
+      <workItem from="1621783815749" duration="418000" />
     </task>
     <servers />
   </component>

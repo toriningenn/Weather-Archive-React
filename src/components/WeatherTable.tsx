@@ -3,30 +3,33 @@ import {Column, useTable} from "react-table";
 import {Weather} from "../Types";
 import {getData} from "../axiosService/AxiosService";
 
-const WeatherTable = () => {
-   const [dataState, setDataState] = useState(Array<Weather>())
-   const [page,setPage] = useState(1)
+const WeatherTable = (props: {}) => {
+   //const [dataState, setDataState] = useState(Array<Weather>());
+   //const [page,setPage] = useState(1 as number);
+
 
     useEffect(() => {
-        let weatherInformation = getData(page);
-        if(weatherInformation){
-       setDataState(weatherInformation)
-        }
-        }, []
-    )
+    getData(1).then(response => console.log(response));
+  }, []
+ )
 
-    useEffect(() => {
-        let weatherInformation = getData(page);
-        if(weatherInformation){
-            setDataState(weatherInformation)
-        }
-        }, [page]
-    )
-
-    const data = React.useMemo(
-        () => dataState
-        , [dataState]
-    )
+const data = React.useMemo(
+   () => [{
+       date: "234.67.86",
+       time: "56:23",
+       vlh: 4,
+       pressure: 43,
+       wind: "C",
+       speed: 33,
+       obl: 4,
+       h: 343,
+       vv: 3434,
+       weatherCond: "wow",
+       t: 4,
+       td: 4,
+   }]
+     , []
+  )
 
     const columns: Array<Column<Weather>> = React.useMemo(() => [
             {
@@ -77,7 +80,7 @@ const WeatherTable = () => {
                 Header: 'Погодные явления',
                 accessor: 'weatherCond',
             },
-        ], [dataState]
+        ], []
     );
 
 
