@@ -1,86 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {
-    Column,
     usePagination,
     useTable,
 } from "react-table";
-import {Weather} from "../Types";
-import {getData} from "../axiosService/AxiosService";
-
-const WeatherTable = (props: {}) => {
-  const  [dataState, setDataState] = useState(Array<Weather>());
-  //const [page,setPage] = useState(1 as number);
+import {WeatherTableProps} from "../Types";
 
 
-    useEffect(() => {
-    getData(1).then((result)=> {if(result) {
-        setDataState(result as Weather[])
-    } else setDataState(Array<Weather>())})
-  }, []
- )
-
-    const data = React.useMemo(
-        () => dataState
-        , [dataState]
-    )
-
-    const columns: Array<Column<Weather>> = React.useMemo(() => [
-            {
-                Header: 'Дата',
-                accessor: 'date',
-            },
-            {
-                Header: 'Время (московское)',
-                accessor: 'time',
-            },
-            {
-                Header: 'T',
-                accessor: 't',
-            },
-            {
-                Header: 'Отн. влажность воздуха, %',
-                accessor: 'vlh',
-            },
-            {
-                Header: 'Td',
-                accessor: 'td',
-            },
-            {
-                Header: 'Атм. давление, мм рт.ст.',
-                accessor: 'pressure',
-            },
-            {
-                Header: 'Направление ветра',
-                accessor: 'wind',
-            },
-            {
-                Header: 'Скорость ветра, м/с',
-                accessor: 'speed',
-            },
-            {
-                Header: 'Облачность, %',
-                accessor: 'obl',
-            },
-            {
-                Header: 'h',
-                accessor: 'h',
-            },
-            {
-                Header: 'VV',
-                accessor: 'vv',
-            },
-            {
-                Header: 'Погодные явления',
-                accessor: 'weatherCond',
-            },
-        ], [dataState]
-    );
-
+const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
 
     const tableInstance = useTable({
             columns,
             data,
-            initialState: {pageIndex: 2},
+            initialState: {pageIndex: 0},
         },
         usePagination
     );
@@ -103,6 +34,12 @@ const WeatherTable = (props: {}) => {
         state: {pageIndex, pageSize},
     } = tableInstance;
 
+   // useEffect(() => {
+  //      if (!canPreviousPage) {
+   //         getMoreDataFunc();
+   //     }
+   // }, [])
+
     return (
         <>
       <pre>
@@ -120,32 +57,32 @@ const WeatherTable = (props: {}) => {
           )}
         </code>
       </pre>
-        <table {...getTableProps}>
-        <thead>
-        {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => <th{...column.getHeaderProps}>{column.render('Header')}</th>)}
-        </tr>)}
-        </thead>
-        <tbody {...getTableBodyProps}>
-        {page.map(row => {
-            prepareRow(row);
-            return <tr{...row.getRowProps}>{row.cells.map(cell =>
-                <td{...cell.getCellProps}>{cell.render('Cell')}</td>)}</tr>
-        })}
-        </tbody>
-    </table>
+            <table {...getTableProps}>
+                <thead>
+                {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => <th{...column.getHeaderProps}>{column.render('Header')}</th>)}
+                </tr>)}
+                </thead>
+                <tbody {...getTableBodyProps}>
+                {page.map(row => {
+                    prepareRow(row);
+                    return <tr{...row.getRowProps}>{row.cells.map(cell =>
+                        <td{...cell.getCellProps}>{cell.render('Cell')}</td>)}</tr>
+                })}
+                </tbody>
+            </table>
 
             <div className="pagination">
-                <button onClick={()=>gotoPage(0)} disabled={!canPreviousPage}>
+                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
                     {'<<'}
                 </button>
-                <button onClick={()=>previousPage()} disabled={!canPreviousPage}>
+                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
                     {'<'}
                 </button>
-                <button onClick={()=> nextPage()} disabled={!canNextPage}>
+                <button onClick={() => nextPage()} disabled={!canNextPage}>
                     {'>'}
                 </button>
-                <button onClick={()=>gotoPage(pageCount-1)} disabled={!canNextPage}>
+                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
                     {'>>'}
                 </button>
                 <span>
@@ -153,22 +90,26 @@ const WeatherTable = (props: {}) => {
                 </span>
                 <span>
            | Go to page:{' '}
-           <input type="number"
-           defaultValue={pageIndex + 1}
-           onChange={e=>{const page = e.target.value ? Number(e.target.value) - 1 : 0;
-           gotoPage(page)}}
-           style={{ width: '100px' }}/>
+                    <input type="number"
+                           defaultValue={pageIndex + 1}
+                           onChange={e => {
+                               const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                               gotoPage(page)
+                           }}
+                           style={{width: '100px'}}/>
                     </span>
                 <select value={pageSize}
-                 onChange={e=>{setPageSize(Number(e.target.value))}}>
-                    {[10,50,100].map(pageSize => (
+                        onChange={e => {
+                            setPageSize(Number(e.target.value))
+                        }}>
+                    {[10, 50, 100].map(pageSize => (
                         <option key={pageSize} value={pageSize}>
                             Show {pageSize}
                         </option>
                     ))}
-                    </select>
+                </select>
             </div>
-            </>
+        </>
     )
 }
 

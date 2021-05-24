@@ -1,3 +1,4 @@
+import {Column} from "react-table";
 
 export type Weather = {
     date: string,
@@ -13,5 +14,12 @@ export type Weather = {
     t: number,
     td: number,
 }
+
+export type WeatherTableProps = {
+    columns: Array<Column<Weather>>,
+    data: Array<Weather>,
+    getMoreDataFunc: () => void,
+}
+
 
 
