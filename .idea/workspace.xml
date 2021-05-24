@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6290e63-56a3-4b56-8c74-c24dfe96d92a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/react-table-config.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-table-config.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-table-config.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WeatherTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +92,7 @@
       <workItem from="1621742767137" duration="1214000" />
       <workItem from="1621758977947" duration="12856000" />
       <workItem from="1621783815749" duration="7095000" />
-      <workItem from="1621836089722" duration="2107000" />
+      <workItem from="1621836089722" duration="4526000" />
     </task>
     <servers />
   </component>
@@ -113,17 +113,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/WeatherTable.tsx</url>
-          <line>99</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
