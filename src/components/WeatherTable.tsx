@@ -1,35 +1,28 @@
 import React, {useEffect, useState} from "react";
-import {Column, useTable} from "react-table";
+import {
+    Column,
+    usePagination,
+    useTable,
+} from "react-table";
 import {Weather} from "../Types";
 import {getData} from "../axiosService/AxiosService";
 
 const WeatherTable = (props: {}) => {
-   //const [dataState, setDataState] = useState(Array<Weather>());
-   //const [page,setPage] = useState(1 as number);
+  const  [dataState, setDataState] = useState(Array<Weather>());
+  //const [page,setPage] = useState(1 as number);
 
 
     useEffect(() => {
-    getData(1).then(response => console.log(response));
+    getData(1).then((result)=> {if(result) {
+        setDataState(result as Weather[])
+    } else setDataState(Array<Weather>())})
   }, []
  )
 
-const data = React.useMemo(
-   () => [{
-       date: "234.67.86",
-       time: "56:23",
-       vlh: 4,
-       pressure: 43,
-       wind: "C",
-       speed: 33,
-       obl: 4,
-       h: 343,
-       vv: 3434,
-       weatherCond: "wow",
-       t: 4,
-       td: 4,
-   }]
-     , []
-  )
+    const data = React.useMemo(
+        () => dataState
+        , [dataState]
+    )
 
     const columns: Array<Column<Weather>> = React.useMemo(() => [
             {
@@ -80,21 +73,35 @@ const data = React.useMemo(
                 Header: 'Погодные явления',
                 accessor: 'weatherCond',
             },
-        ], []
+        ], [dataState]
     );
 
 
+    const tableInstance = useTable({
+            columns,
+            data,
+            initialState: {pageIndex: 2},
+        },
+        usePagination);
 
-    const tableInstance = useTable({columns, data})
+
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
-        rows,
-        prepareRow
+        prepareRow,
+        page,
+        canPreviousPage,
+        canNextPage,
+        pageOptions,
+        pageCount,
+        gotoPage,
+        nextPage,
+        previousPage,
+        setPageSize,
+        state: {pageIndex, pageSize},
     } = tableInstance;
-    //25 рядов на страницу возвращать каким-то циклом
-    //а ячеек столько сколько строчек в объекте дата
+    
     return (<table {...getTableProps}>
         <thead>
         {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
@@ -102,7 +109,7 @@ const data = React.useMemo(
         </tr>)}
         </thead>
         <tbody {...getTableBodyProps}>
-        {rows.map(row => {
+        {page.map(row => {
             prepareRow(row);
             return <tr{...row.getRowProps}>{row.cells.map(cell =>
                 <td{...cell.getCellProps}>{cell.render('Cell')}</td>)}</tr>
