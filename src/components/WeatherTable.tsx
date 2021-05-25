@@ -1,19 +1,24 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {
+    Column, defaultColumn, FilterProps,
+    useFilters, useGlobalFilter,
     usePagination,
     useTable,
 } from "react-table";
-import {WeatherTableProps} from "../Types";
+import {Weather, WeatherTableProps} from "../Types";
 
 
 const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
+
 
     const tableInstance = useTable({
             columns,
             data,
             initialState: {pageIndex: 0},
+            autoResetPage: false,
         },
-        usePagination
+        useFilters,
+        usePagination,
     );
 
 
@@ -34,33 +39,19 @@ const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
         state: {pageIndex, pageSize},
     } = tableInstance;
 
-   // useEffect(() => {
-  //      if (!canPreviousPage) {
-   //         getMoreDataFunc();
-   //     }
-   // }, [])
+    useEffect(() => {
+        if (!canNextPage) {
+            getMoreDataFunc();
+        }
+    }, [canNextPage])
 
     return (
         <>
-      <pre>
-        <code>
-          {JSON.stringify(
-              {
-                  pageIndex,
-                  pageSize,
-                  pageCount,
-                  canNextPage,
-                  canPreviousPage,
-              },
-              null,
-              2
-          )}
-        </code>
-      </pre>
             <table {...getTableProps}>
                 <thead>
                 {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map(column => <th{...column.getHeaderProps}>{column.render('Header')}</th>)}
+                    {headerGroup.headers.map(column => <th{...column.getHeaderProps()}>{column.render('Header')}
+                    </th>)}
                 </tr>)}
                 </thead>
                 <tbody {...getTableBodyProps}>
@@ -102,7 +93,7 @@ const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
                         onChange={e => {
                             setPageSize(Number(e.target.value))
                         }}>
-                    {[10, 50, 100].map(pageSize => (
+                    {[25, 50, 100].map(pageSize => (
                         <option key={pageSize} value={pageSize}>
                             Show {pageSize}
                         </option>

@@ -9,13 +9,15 @@ const App = () => {
     const [weatherInfo, setWeatherInfo] = useState(Array<Weather>());
     const [pageNumber, setPageNumber] = useState(1 as number)
 
-    useEffect(() =>{
-        createData(pageNumber).then(response =>setWeatherInfo(response));
-     }, [])
+    useEffect(() => {
+        createData(pageNumber).then(response => setWeatherInfo(response));
+    }, [])
 
-    useEffect(() =>{
-        createData(pageNumber).then(response =>setWeatherInfo(response));
+    useEffect(() => {
+        let oldWeatherArr = weatherInfo;
+        createData(pageNumber).then(response => setWeatherInfo(oldWeatherArr.concat(response)));
     }, [pageNumber])
+
 
     const data = React.useMemo(
         () => weatherInfo
