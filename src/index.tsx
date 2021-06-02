@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 
 ReactDOM.render(
-    <div className="App">
+    <div className="App text-white bg-dark">
         <Router>
             <Navigation/>
             <Switch>

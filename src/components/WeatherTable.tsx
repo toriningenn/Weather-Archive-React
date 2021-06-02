@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import Table from 'react-bootstrap/Table';
 import {
     useFilters,
     usePagination,
@@ -17,7 +18,7 @@ const defaultColumn = React.useMemo(()=>({
             columns,
             data,
             defaultColumn,
-            initialState: {pageIndex: 0},
+            initialState: {pageIndex: 0, pageSize: 15},
             autoResetPage: false,
             autoResetFilters: false,
         },
@@ -51,6 +52,7 @@ const defaultColumn = React.useMemo(()=>({
 
     return (
         <>
+            <Table striped bordered hover size="sm" variant="dark">
             <table {...getTableProps}>
                 <thead>
                 {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
@@ -67,6 +69,7 @@ const defaultColumn = React.useMemo(()=>({
                 })}
                 </tbody>
             </table>
+            </Table>
 
             <div className="pagination">
                 <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -98,7 +101,7 @@ const defaultColumn = React.useMemo(()=>({
                         onChange={e => {
                             setPageSize(Number(e.target.value))
                         }}>
-                    {[25, 50, 100].map(pageSize => (
+                    {[15, 25, 50, 100].map(pageSize => (
                         <option key={pageSize} value={pageSize}>
                             Show {pageSize}
                         </option>
