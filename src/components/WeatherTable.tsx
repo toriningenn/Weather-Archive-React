@@ -10,6 +10,7 @@ import DefaultDateFilter from "./FilterUI";
 
 
 const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
+
     const defaultColumn = React.useMemo(() => ({
         Filter: DefaultDateFilter,
     }), [])
@@ -25,7 +26,6 @@ const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
         useFilters,
         usePagination,
     );
-
 
     const {
         getTableProps,
@@ -44,16 +44,23 @@ const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
         state: {pageIndex, pageSize, filters},
     } = tableInstance;
 
+
     useEffect(() => {
         if (!canNextPage) {
             getMoreDataFunc();
         }
     }, [canNextPage])
 
+    React.useEffect(() => {
+        if (filters) {
+            gotoPage(0)
+        }
+    }, [filters]);
+
     return (
         <>
             <Table striped bordered hover size="sm" variant="dark">
-                <table {...getTableProps}>
+                <table {...getTableProps} >
                     <thead>
                     {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => <th{...column.getHeaderProps()}>{column.render('Header')}
