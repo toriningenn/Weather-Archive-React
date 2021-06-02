@@ -10,9 +10,9 @@ import DefaultDateFilter from "./FilterUI";
 
 
 const WeatherTable = ({columns, data, getMoreDataFunc}: WeatherTableProps) => {
-const defaultColumn = React.useMemo(()=>({
-    Filter: DefaultDateFilter,
-}),[])
+    const defaultColumn = React.useMemo(() => ({
+        Filter: DefaultDateFilter,
+    }), [])
 
     const tableInstance = useTable({
             columns,
@@ -53,22 +53,22 @@ const defaultColumn = React.useMemo(()=>({
     return (
         <>
             <Table striped bordered hover size="sm" variant="dark">
-            <table {...getTableProps}>
-                <thead>
-                {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map(column => <th{...column.getHeaderProps()}>{column.render('Header')}
-                   <div> {column.canFilter ? column.render('Filter') : null}</div>
-                    </th>)}
-                </tr>)}
-                </thead>
-                <tbody {...getTableBodyProps}>
-                {page.map(row => {
-                    prepareRow(row);
-                    return <tr{...row.getRowProps}>{row.cells.map(cell =>
-                        <td{...cell.getCellProps}>{cell.render('Cell')}</td>)}</tr>
-                })}
-                </tbody>
-            </table>
+                <table {...getTableProps}>
+                    <thead>
+                    {headerGroups.map(headerGroup => <tr {...headerGroup.getHeaderGroupProps()}>
+                        {headerGroup.headers.map(column => <th{...column.getHeaderProps()}>{column.render('Header')}
+                            <div> {column.canFilter ? column.render('Filter') : null}</div>
+                        </th>)}
+                    </tr>)}
+                    </thead>
+                    <tbody {...getTableBodyProps}>
+                    {page.map(row => {
+                        prepareRow(row);
+                        return <tr{...row.getRowProps}>{row.cells.map(cell =>
+                            <td{...cell.getCellProps}>{cell.render('Cell')}</td>)}</tr>
+                    })}
+                    </tbody>
+                </table>
             </Table>
 
             <div className="pagination">

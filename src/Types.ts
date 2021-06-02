@@ -20,6 +20,3 @@ export type WeatherTableProps = {
     data: Array<Weather>,
     getMoreDataFunc: () => void,
 }
-
-
-

@@ -1,7 +1,7 @@
-import {Column, ColumnInstance, Row, UseColumnOrderState} from "react-table";
+import {ColumnInstance} from "react-table";
 
 export default function DefaultDateFilter({column: {filterValue, preFilteredRows, setFilter,}}
-                                       : { column: ColumnInstance }) {
+                                              : { column: ColumnInstance }) {
     return (
         <input
             value={filterValue || ''}

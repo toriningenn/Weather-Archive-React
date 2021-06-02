@@ -7,12 +7,10 @@ function convertDate(unixTime: string | number) {
 }
 
 
-export default function createData(page: number) {
-    return getDataByPage(page).then((result) => {
-        if (result) {
-            let resultArray = result as Weather[]
-            resultArray.forEach(weather =>  weather.date = (convertDate(weather.date)))
-            return resultArray;
-        } else return Array<Weather>();
-    });
+export default async function createData(page: number) {
+    let data = await getDataByPage(page) as Weather[];
+    if (data) {
+        data.forEach(weather => weather.date = (convertDate(weather.date)))
+        return data;
+    } else return Array<Weather>();
 }

@@ -1,24 +1,29 @@
 import React, {useEffect, useState} from "react";
-import {Column} from "react-table";
 import {Weather} from "../Types";
 import createData from "../CreateData";
 import createColumns from "../CreateColumns";
 import WeatherTable from "./WeatherTable";
-import UploadForm from "./UploadForm";
+
 
 const App = () => {
     const [weatherInfo, setWeatherInfo] = useState(Array<Weather>());
     const [pageNumber, setPageNumber] = useState(1 as number)
 
     useEffect(() => {
-        console.log("getting data...");
-        createData(pageNumber).then(response => setWeatherInfo(response));
+        (async function () {
+            console.log("getting data...");
+            let data = await createData(pageNumber);
+            setWeatherInfo(data);
+        })()
     }, [])
 
     useEffect(() => {
-        let oldWeatherArr = weatherInfo;
-        console.log("getting more data...");
-        createData(pageNumber).then(response => setWeatherInfo(oldWeatherArr.concat(response)));
+        (async function () {
+            let oldWeatherArr = weatherInfo;
+            console.log("getting more data...");
+            let data = await createData(pageNumber);
+            setWeatherInfo(oldWeatherArr.concat(data));
+        })()
     }, [pageNumber])
 
 
