@@ -1,7 +1,7 @@
 import {Column} from "react-table";
 
 export type Weather = {
-    date: Date | string,
+    date: string | number,
     time: string,
     vlh: number,
     pressure: number,
