@@ -1,6 +1,5 @@
-import {Column, FilterProps} from "react-table";
+import {Column} from "react-table";
 import {Weather} from "./Types";
-import {JSXElementConstructor} from "react";
 
 const createColumns = (): Array<Column<Weather>> => {
     return [

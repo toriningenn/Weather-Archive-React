@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {
-    Column, defaultColumn, FilterProps,
-    useFilters, useGlobalFilter,
+    useFilters,
     usePagination,
     useTable,
 } from "react-table";
-import {Weather, WeatherTableProps} from "../Types";
+import {WeatherTableProps} from "../Types";
 import DefaultDateFilter from "./FilterUI";
 
 

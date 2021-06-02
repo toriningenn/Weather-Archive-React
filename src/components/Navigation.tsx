@@ -1,10 +1,11 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
 const Navigation = (props: {}) => {
 
     return <div>
-        <a href={"..."}>Загрузить файл</a>
-        <a href={"..."}>Просмотр архива</a>
+        <Link to="/upload">Загрузить файл</Link>
+        <Link to="/archive">Просмотр архива</Link>
     </div>
 }
 
