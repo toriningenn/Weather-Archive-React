@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6290e63-56a3-4b56-8c74-c24dfe96d92a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Filter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FilterUI.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CreateColumns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreateColumns.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateFilter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WeatherTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +94,9 @@
       <workItem from="1621836089722" duration="5589000" />
       <workItem from="1621846931872" duration="4149000" />
       <workItem from="1621947866624" duration="13365000" />
-      <workItem from="1622013282349" duration="2342000" />
+      <workItem from="1622013282349" duration="2885000" />
+      <workItem from="1622528819477" duration="493000" />
+      <workItem from="1622529535785" duration="5580000" />
     </task>
     <servers />
   </component>
