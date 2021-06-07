@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6290e63-56a3-4b56-8c74-c24dfe96d92a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UploadForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.27" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -102,6 +105,7 @@
       <workItem from="1622529535785" duration="21058000" />
       <workItem from="1622710354513" duration="52000" />
       <workItem from="1622808866823" duration="12000" />
+      <workItem from="1623047794769" duration="1121000" />
     </task>
     <servers />
   </component>
@@ -122,5 +126,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/axiosService/AxiosService.ts</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
