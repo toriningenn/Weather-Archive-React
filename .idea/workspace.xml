@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6290e63-56a3-4b56-8c74-c24dfe96d92a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/axiosService/AxiosService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UploadForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,16 @@
       <workItem from="1622710354513" duration="52000" />
       <workItem from="1622808866823" duration="12000" />
       <workItem from="1623047794769" duration="1121000" />
+      <workItem from="1623074053730" duration="86000" />
+      <workItem from="1623138519400" duration="44000" />
+      <workItem from="1623138590186" duration="577000" />
+      <workItem from="1623141855118" duration="87000" />
+      <workItem from="1623147445261" duration="133000" />
+      <workItem from="1623147794622" duration="22000" />
+      <workItem from="1623148614404" duration="15000" />
+      <workItem from="1623148697387" duration="37000" />
+      <workItem from="1623149063806" duration="507000" />
+      <workItem from="1623149733463" duration="10000" />
     </task>
     <servers />
   </component>
@@ -126,17 +136,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/axiosService/AxiosService.ts</url>
-          <line>8</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
